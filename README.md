@@ -50,7 +50,7 @@ flowchart LR
 | Path | Purpose |
 |---|---|
 | `src/server.ts` | Fastify app: `/health`, `GET /wa/webhook/{account_id}` (verification), `POST /wa/webhook/{account_id}` (queue first) |
-| `spec/endpoints.json`, `src/spec/stubs.ts` | The 28 gateway APIs from spec section 8; the webhook is built, the other 26 answer 501 until built |
+| `spec/endpoints.json`, `src/spec/stubs.ts` | The 27 gateway APIs from spec section 8 (v1.1); the webhook is built, the other 25 answer 501 until built. In-chat payment results come from the platform's gateway callback, not the gateway (spec 10.2, decision 20) |
 | `src/worker.ts` | Queue worker that processes inbound messages |
 | `src/webhook/` | Signature verification and payload parsing (with tests) |
 | `src/queue/` | Queue definitions |

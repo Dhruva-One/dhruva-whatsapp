@@ -1,6 +1,6 @@
 [
 {"m":"GET","p":"/wa/webhook/{account_id}","mod":"whatsapp","o":"s","why":"Provider verification handshake","req":["WAB-MNU","WAB-PAR","WAB-STF","WAB-TCH"],"src":"§8"},
-{"m":"POST","p":"/wa/webhook/{account_id}","mod":"whatsapp","o":"s","why":"Inbound messages and status callbacks (messages, statuses, template and quality updates)","req":["WAB-MNU","WAB-PAR","WAB-STF","WAB-TCH"],"src":"§8"},
+{"m":"POST","p":"/wa/webhook/{account_id}","mod":"whatsapp","o":"s","why":"Inbound messages and status callbacks (messages, statuses, template and quality updates); ","req":["WAB-MNU","WAB-PAR","WAB-STF","WAB-TCH"],"src":"§8"},
 {"m":"POST","p":"/wa/send","mod":"whatsapp","o":"s","why":"Send one message (text, interactive, template, document)","req":["WAB-OUT","WAB-PLT"],"src":"§8"},
 {"m":"POST","p":"/wa/notify","mod":"whatsapp","o":"s","why":"Request an event notification (resolves channel, template, caps, quiet hours)","req":["WAB-FAL","WAB-OUT"],"src":"§8"},
 {"m":"GET","p":"/wa/accounts","mod":"whatsapp","o":"s","why":"View and edit account settings, profile, display name","req":["WAB-ACC","WAB-ADM"],"src":"§8"},
@@ -25,6 +25,5 @@
 {"m":"GET","p":"/wa/analytics","mod":"whatsapp","o":"s","why":"Tiles, analytics, cost","req":["WAB-ANA"],"src":"§8"},
 {"m":"GET","p":"/wa/usage","mod":"whatsapp","o":"s","why":"Tiles, analytics, cost","req":["WAB-ANA"],"src":"§8"},
 {"m":"POST","p":"/wa/flows/endpoint","mod":"whatsapp","o":"s","why":"Encrypted data exchange for WhatsApp Flows (roster, dates, PIN check)","req":["WAB-PAR","WAB-STF","WAB-TCH"],"src":"§8"},
-{"m":"POST","p":"/wa/payments/callback","mod":"whatsapp","o":"s","why":"Gateway payment result for an order","req":["WAB-PAR"],"src":"§8"},
 {"m":"GET","p":"/wa/media/{id}","mod":"whatsapp","o":"s","why":"Authenticated media fetch for agents","req":["WAB-SEC"],"src":"§8"}
 ]

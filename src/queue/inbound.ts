@@ -8,5 +8,6 @@ export const inboundQueue = new Queue(INBOUND_QUEUE, { connection: { url: config
 
 export interface InboundJob {
   receivedAt: string;
+  accountId: string; // WhatsApp account (school number) the message arrived on
   payload: unknown; // raw webhook body from Meta
 }

@@ -49,7 +49,8 @@ flowchart LR
 
 | Path | Purpose |
 |---|---|
-| `src/server.ts` | Fastify app: `/health`, `GET /webhook` (verification), `POST /webhook` (queue first) |
+| `src/server.ts` | Fastify app: `/health`, `GET /wa/webhook/{account_id}` (verification), `POST /wa/webhook/{account_id}` (queue first) |
+| `spec/endpoints.json`, `src/spec/stubs.ts` | The 28 gateway APIs from spec section 8; the webhook is built, the other 26 answer 501 until built |
 | `src/worker.ts` | Queue worker that processes inbound messages |
 | `src/webhook/` | Signature verification and payload parsing (with tests) |
 | `src/queue/` | Queue definitions |
@@ -78,8 +79,9 @@ Other checks:
 
 ```bash
 curl localhost:3100/health
-curl "localhost:3100/webhook?hub.mode=subscribe&hub.verify_token=local-verify-token&hub.challenge=123"   # echoes 123
-npm test                      # signature and parsing tests
+curl "localhost:3100/wa/webhook/local-account?hub.mode=subscribe&hub.verify_token=local-verify-token&hub.challenge=123"   # echoes 123
+curl localhost:3100/internal/spec/coverage   # built vs stubbed spec APIs
+npm test                      # signature, parsing and spec-coverage tests
 npm run typecheck
 npm run build && npm start    # compiled server (npm run start:worker for the worker)
 ```

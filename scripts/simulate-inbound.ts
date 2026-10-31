@@ -11,7 +11,7 @@ const body = JSON.stringify({
 });
 const port = process.env.PORT ?? '3100';
 
-fetch(`http://localhost:${port}/webhook`, {
+fetch(`http://localhost:${port}/wa/webhook/local-account`, {
   method: 'POST',
   headers: { 'content-type': 'application/json', 'x-hub-signature-256': sign(body, process.env.WHATSAPP_APP_SECRET ?? '') },
   body,
